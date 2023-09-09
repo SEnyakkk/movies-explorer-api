@@ -1,2 +1,4 @@
 # movies-explorer-api
-backend
+backend 
+https://github.com/SEnyakkk/movies-explorer-frontend
+
