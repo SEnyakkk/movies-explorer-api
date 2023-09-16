@@ -10,15 +10,15 @@ const ConflictError = require('../utils/errors/Conflict');
 
 module.exports.addUser = (req, res, next) => {
   const {
-    name, email, password
+    name, email, password,
   } = req.body;
   bcrypt.hash(password, 10)
     .then((hash) => User.create({
-      name, email, password: hash
+      name, email, password: hash,
     }))
     .then(() => res.status(HTTP_STATUS_CREATED).send({
       data: {
-        name, email
+        name, email,
       },
     }))
     .catch((err) => {

@@ -8,12 +8,22 @@ const ForbiddenError = require('../utils/errors/Forbidden');
 module.exports.addMovie = (req, res, next) => {
   const {
     country, director, duration, description, year, image,
-     trailerLink, thumbnail, movieId, nameRU, nameEN,
-    } = req.body;
+    trailerLink, thumbnail, movieId, nameRU, nameEN,
+  } = req.body;
   Movie.create({
-    country, director, duration, description, year, image,
-     trailerLink, thumbnail, movieId, nameRU, nameEN, owner: req.user._id,
-    })
+    country,
+    director,
+    duration,
+    description,
+    year,
+    image,
+    trailerLink,
+    thumbnail,
+    movieId,
+    nameRU,
+    nameEN,
+    owner: req.user._id,
+  })
     .then((movie) => res.status(HTTP_STATUS_CREATED).send(movie))
     .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {

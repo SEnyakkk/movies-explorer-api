@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { celebrate, Joi } = require('celebrate');
 const {
-  getMovies, addMovie, deleteMovie
+  getMovies, addMovie, deleteMovie,
 } = require('../controllers/movies');
 const { REG_URL } = require('../utils/constants');
 
