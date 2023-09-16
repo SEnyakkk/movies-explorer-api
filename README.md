@@ -12,26 +12,33 @@ Nginx
 
 Routes:
 
-# возвращает информацию о пользователе (email и имя)
-GET /users/me
+# GET /users/me
+ возвращает информацию о пользователе (email и имя)
 
-# обновляет информацию о пользователе (email и имя)
-PATCH /users/me
 
-# возвращает все сохранённые текущим пользователем фильмы
-GET /movies
+# PATCH /users/me
+обновляет информацию о пользователе (email и имя)
 
-# создаёт фильм с переданными в теле
-# country, director, duration, year, description, image, trailer, nameRU, nameEN и thumbnail, movieId 
-POST /movies
 
-# удаляет сохранённый фильм по id
-DELETE /movies/_id
+# GET /movies
+возвращает все сохранённые текущим пользователем фильмы
 
-# создаёт пользователя с переданными в теле
-# email, password и name
-POST /signup
 
-# проверяет переданные в теле почту и пароль
-# и возвращает JWT
-POST /signin 
+# POST /movies
+создаёт фильм с переданными в теле
+country, director, duration, year, description, image, trailer, nameRU, nameEN и thumbnail, movieId 
+
+
+# DELETE /movies/_id
+удаляет сохранённый фильм по id
+
+
+# POST /signup
+создаёт пользователя с переданными в теле
+email, password и name
+
+
+# POST /signin
+проверяет переданные в теле почту и пароль
+и возвращает JWT
+ 

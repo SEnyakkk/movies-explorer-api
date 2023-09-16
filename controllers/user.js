@@ -6,7 +6,6 @@ const jwt = require('jsonwebtoken');
 const { JWT_SECRET = 'JWT_SECRET' } = process.env;
 const User = require('../models/user');
 const BadRequestError = require('../utils/errors/BadRequest');
-const NotFoundError = require('../utils/errors/NotFound');
 const ConflictError = require('../utils/errors/Conflict');
 
 module.exports.addUser = (req, res, next) => {
