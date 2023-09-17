@@ -2,13 +2,14 @@
 backend диплома Яндекс Практикум
 https://github.com/SEnyakkk/movies-explorer-api
 
+https://api.sen.nomoredomainsrocks.ru/
+
 npm run start — запуск сервера
 npm run dev — запуск сервера с hot-reload
 
 Инструменты:
 Node.js
 MongoDB
-Nginx
 
 Routes:
 
