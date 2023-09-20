@@ -8,6 +8,7 @@ const { rateLimit } = require('express-rate-limit');
 const cors = require('cors');
 const errorHandler = require('./middlewares/error-handler');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const { limiter } = require('./utils/constants');
 const NotFoundError = require('./utils/errors/NotFound');
 
 const { PORT = 3000, MONGO_DB = 'mongodb://127.0.0.1:27017/bitfilmsdb' } = process.env;
@@ -16,10 +17,7 @@ const app = express();
 
 app.use(cors());
 
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
-});
+app.use(limiter);
 
 app.use(requestLogger);
 app.use(limiter);
