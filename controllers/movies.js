@@ -35,7 +35,7 @@ module.exports.addMovie = (req, res, next) => {
 };
 
 module.exports.getMovies = (req, res, next) => {
-  Movie.find({}).sort({ createdAd: -1 })
+  Movie.find({ owner: req.user._id }).sort({ createdAd: -1 })
     .then((movies) => res.send(movies))
     .catch(next);
 };
