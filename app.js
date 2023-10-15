@@ -16,7 +16,6 @@ const { PORT = 3000, MONGO_DB = 'mongodb://127.0.0.1:27017/bitfilmsdb' } = proce
 const app = express();
 
 app.use(cors());
-
 app.use(limiter);
 
 app.use(requestLogger);
